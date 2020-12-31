@@ -90,7 +90,7 @@
     <td>
     <!-- Button trigger modal -->
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#{{$anjing->id}}">
-      Tambah Feedback
+      Feedback
     </button>
 
     <!-- Modal -->

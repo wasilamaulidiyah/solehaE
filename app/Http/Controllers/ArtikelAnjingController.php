@@ -16,9 +16,9 @@ class ArtikelAnjingController extends Controller
      */
     public function index()
     {
-        $artikelanjings = DB::table('artikel_anjings')->select()->get();
-        
-        return view("/themes/artikel/artikelanjing", ['artikelanjings'=>$artikelanjings]);
+        $artikelanjings = ArtikelAnjing::all();
+
+        return view("/themes/artikel/artikelanjing", compact('artikelanjings'));
     }
 
     /**
@@ -41,11 +41,23 @@ class ArtikelAnjingController extends Controller
     {
         $artikelanjing = new ArtikelAnjing();
         $artikelanjing->user_id = Auth::user()->id;
-        $artikelanjing->judul= $request->input('judul');
+        $artikelanjing->judul = $request->input('judul');
         $artikelanjing->author = $request->input('author');
+        $artikelanjing->gambar = $request->file('gambar');
         $artikelanjing->konten = $request->input('konten');
+
+        if($request->hasFile('gambar'))
+        {
+            $artikelanjing->gambar = $request->file('gambar')->store('artikel', 'public');
+        }
+
+        else {
+            return $request;
+            $artikel->gambar = '';
+        }
+
         $artikelanjing->save();
-        
+
         return redirect('/artikelanjing');
     }
 
@@ -84,9 +96,10 @@ class ArtikelAnjingController extends Controller
         $artikel = ArtikelAnjing::find ($id);
         $artikel->judul= $request->input('judul');
         $artikel->author = $request->input('author');
+        $artikel->gambar = $request->file('gambar');
         $artikel->konten = $request->input('konten');
         $artikel->save();
-        
+
         return redirect('/artikelanjing');
     }
 

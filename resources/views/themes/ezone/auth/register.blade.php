@@ -1,9 +1,9 @@
 @extends('themes.ezone.layout')
 
 @section('content')
-<div class="text-center">
+{{-- <div class="text-center">
   <img src="{{ asset('themes/ezone/assets/img/logopc.png') }}" class="rounded" width="200px" height="200px">
-</div>
+</div> --}}
 	<!-- register-area start -->
 	<div class="register-area ptb-100">
 		<div class="container-fluid">

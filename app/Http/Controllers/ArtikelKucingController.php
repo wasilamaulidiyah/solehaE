@@ -16,9 +16,9 @@ class ArtikelKucingController extends Controller
      */
     public function index()
     {
-        $artikelkucings = DB::table('artikel_kucings')->select()->get();
-        
-            return view("/themes/artikel/artikelkucing", ['artikelkucings'=>$artikelkucings]);
+      $artikelkucings = ArtikelKucing::all();
+
+      return view("/themes/artikel/artikelkucing", compact('artikelkucings'));
     }
 
     /**
@@ -43,9 +43,21 @@ class ArtikelKucingController extends Controller
         $artikelkucing->user_id = Auth::user()->id;
         $artikelkucing->judul= $request->input('judul');
         $artikelkucing->author = $request->input('author');
+        $artikelkucing->gambar = $request->file('gambar');
         $artikelkucing->konten = $request->input('konten');
+
+        if($request->hasFile('gambar'))
+        {
+            $artikelkucing->gambar = $request->file('gambar')->store('artikel', 'public');
+        }
+
+        else {
+            return $request;
+            $artikel->gambar = '';
+        }
+
         $artikelkucing->save();
-        
+
         return redirect('/artikelkucing');
     }
 
@@ -84,9 +96,21 @@ class ArtikelKucingController extends Controller
         $artikel = ArtikelKucing::find ($id);
         $artikel->judul= $request->input('judul');
         $artikel->author = $request->input('author');
+        $artikel->gambar = $request->file('gambar');
         $artikel->konten = $request->input('konten');
+
+        if($request->hasFile('gambar'))
+        {
+            $artikelkucing->gambar = $request->file('gambar')->store('artikel', 'public');
+        }
+
+        else {
+            return $request;
+            $artikel->gambar = '';
+        }
+
         $artikel->save();
-        
+
         return redirect('/artikelkucing');
     }
 

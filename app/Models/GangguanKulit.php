@@ -8,15 +8,16 @@ class GangguanKulit extends Model
 {
     protected $fillable = [
         'user_id',
-        'soal1', 
-        'soal2', 
-        'soal3', 
-        'soal4', 
+        'soal1',
+        'soal2',
+        'soal3',
+        'soal4',
         'soal5',
         'soal6',
+        'gambar',
         'feedback'
     ];
-    
+
     public static function types()
     {
         return [

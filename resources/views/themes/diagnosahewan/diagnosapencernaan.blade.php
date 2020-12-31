@@ -2,8 +2,9 @@
 
 @section('content')
 @if (Auth::user()!=null && Auth::user()->is_premium == 1)
+<br/>
 <div class="section-title-3 mb-15">
-	<h2>Hasil Diagnosa</h2>
+	<h2>Hasil Diagnosa Pencernaan</h2>
 </div>
 <table class="table table-striped">
     <tr>

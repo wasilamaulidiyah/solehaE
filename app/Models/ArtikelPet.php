@@ -13,7 +13,8 @@ class ArtikelPet extends Model
         'id',
         'user_id',
         'judul', 
-        'author', 
+        'author',
+        'gambar', 
         'konten', 
     ];
 

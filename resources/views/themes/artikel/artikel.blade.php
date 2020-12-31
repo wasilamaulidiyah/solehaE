@@ -14,9 +14,9 @@
             </div>
             </div>
         </div>
-    
+
     <div class="cart-box-main">
-        <div class="container"> 
+        <div class="container">
         @if($is_kucing)
         <form method="POST" action="{{url('/artikelkucing/'.$artikel->id)}}">
         @else
@@ -24,8 +24,8 @@
         @endif
                 <div class="row">
                     <div class="col-md-6 mb-3">
-                    @csrf
-                    @method('PUT')
+                        @csrf
+                        @method('PUT')
                         <div class="form-group">
                             <label for="">Judul</label>
                             <input class="form-control" name="judul" id="judul" type="text" value="{{ $artikel->judul }}">
@@ -37,9 +37,19 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="isi">Isi Konten</label>
-                    <textarea class="form-control" name= "konten" id="konten" rows="3" >{{ $artikel->konten }}</textarea>
+                    <label class="small mb-1" for="summernote">Isi Konten</label>
+                    <textarea class ="form-control" name="konten" id="konten"  cols="30">{{ $artikel->konten }}</textarea>
                 </div>
+                <div class="form-group">
+                    <label class="small mb-1" for="gambar">Gambar</label>
+                    <input required class="form-control" id="gambar" type="file" name="gambar" accept="image/*" value="{{$artikel->gambar}}"/>
+                </div>
+                @error('gambar')
+                    <span>
+                    {{ ucwords($message) }}
+                    </span>
+                @enderror
+
                 <div class="form-group row mb-0">
                     <div class="col-md-12">
                         <button href="/" type="submit" class="btn btn-primary" >
@@ -47,7 +57,7 @@
                         </button>
                     </div>
                 </div>
-              
+
             </form>
         </div>
     </div>
@@ -57,13 +67,14 @@
 				<h2>Artikel Pet Care</h2>
 			</div>
 			@foreach($artikels as $artikel)
-			
+
 			<div class="card">
 				<div class="card-header">
-				 {{$artikel->judul}} 
+				 {{$artikel->judul}}
 				</div>
 				<div class="card-body">
 					<h5 class="card-title">{{$artikel->author}}</h5>
+          <img src="{{asset('storage/'.$artikelanjing->gambar)}}">
 					<p class="card-text">{{$artikel->konten}}</p>
 				</div>
 			</div>

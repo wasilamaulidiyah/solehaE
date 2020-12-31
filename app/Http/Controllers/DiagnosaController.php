@@ -61,7 +61,19 @@ class DiagnosaController extends Controller
         $kulit->soal4 = $request->input('soal4');
         $kulit->soal5 = $request->input('soal5');
         $kulit->soal6 = $request->input('soal6');
+        $kulit->gambar = $request->input('gambar');
         $kulit->feedback = "";
+
+        if($request->hasFile('gambar'))
+        {
+            $kulit->gambar = $request->file('gambar')->store('diagnosa', 'public');
+        }
+
+        else {
+            return $request;
+            $kulit->gambar = '';
+        }
+
         $kulit->save();
 
         return redirect('/diagnosa');
@@ -106,7 +118,9 @@ class DiagnosaController extends Controller
         $kulit->soal4 = $request->input('soal4');
         $kulit->soal5 = $request->input('soal5');
         $kulit->soal6 = $request->input('soal6');
+        $kulit->gambar = $request->input('gambar');
         $kulit->feedback = $request->input('feedback');
+
         $kulit->save();
 
         return redirect('/diagnosa');

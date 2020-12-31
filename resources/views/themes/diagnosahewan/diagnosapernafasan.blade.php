@@ -2,6 +2,7 @@
 
 @section('content')
 @if (Auth::user()!=null && Auth::user()->is_premium == 1)
+<br>
 <div class="section-title-3 mb-15">
 	<h2>Hasil Diagnosa Pernapasan</h2>
 </div>

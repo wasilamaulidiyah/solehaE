@@ -1,4 +1,34 @@
-<!-- footer area start -->
+<footer>
+    {{-- <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-6 col-12">
+                <div class="item">
+                    <ul>
+                      <p><a href="#">----</a></p>
+                      <p><a href="#">TRPL B</a></p>
+                      <p><a href="#">----</a></p>
+                      <p><a href="#">Kelompok E</a></p>
+                      <p><a href="#">----</a></p>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-12">
+                <div class="item date">
+                    <h4 class="text-uppercase">Team</h4>
+                    <p><a href="#">Zhafirah Nabillah</a></p>
+                    <p><a href="#">Tiara Maulidya</a></p>
+                    <p><a href="#">Jihan Citra</a></p>
+                    <p><a href="#">Shelly</a></p>
+                    <p><a href="#">Wasila Maulidiyah</a></p>
+                </div>
+            </div>
+        </div>
+    </div> --}}
+    <div class="copyright text-center">
+        <p>Copyright 2019  Design by <a href="https://html.design">Free Html Templates</a></p>
+    </div>
+</footer>
+{{-- <!-- footer area start -->
 <footer class="footer-area">
     <!-- <div class="footer-top-area pt-70 pb-35 wrapper-padding-5">
         <div class="container-fluid">
@@ -68,4 +98,4 @@
             </div>
         </div>
     </div>
-</footer>
+</footer> --}}

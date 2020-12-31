@@ -16,9 +16,9 @@ class ArtikelController extends Controller
      */
     public function index()
     {
-        $artikels = DB::table('artikel_pets')->select()->get();
+      $artikels = ArtikelPet::all();
 
-        return view("/themes/artikel/artikel", ['artikels'=>$artikels]);
+      return view("/themes/artikel/artikel", compact('artikels'));
     }
 
     /**
@@ -28,7 +28,7 @@ class ArtikelController extends Controller
      */
     public function create()
     {
-        
+
     }
 
     /**
@@ -43,9 +43,21 @@ class ArtikelController extends Controller
         $artikel->user_id = Auth::user()->id;
         $artikel->judul= $request->input('judul');
         $artikel->author = $request->input('author');
+        $artikel->gambar = $request->file('gambar');
         $artikel->konten = $request->input('konten');
+
+        if($request->hasFile('gambar'))
+        {
+            $artikel->gambar = $request->file('gambar')->store('artikel', 'public');
+        }
+
+        else {
+            return $request;
+            $artikel->gambar = '';
+        }
+
         $artikel->save();
-        
+
         return redirect('/artikel');
     }
 
@@ -68,7 +80,7 @@ class ArtikelController extends Controller
      */
     public function edit($id)
     {
-    
+
     }
 
     /**
@@ -83,12 +95,24 @@ class ArtikelController extends Controller
         $this->validate($request, [
             'judul' => 'required',
             'author' => 'required',
+            'gambar' => 'required|image',
             'konten' => 'required'
         ]);
-        
+
+        if($request->hasFile('gambar'))
+        {
+            $artikel->gambar = $request->file('gambar')->store('artikel', 'public');
+        }
+
+        else {
+            return $request;
+            $artikel->gambar = '';
+        }
+
         $artikel-> update([
             'judul' => \Str::slug($request->judul),
             'author' => $request->author,
+            'gambar' => $request->gambar,
             'konten' => $request->konten,
         ]);
         // $artikel = ArtikelPet::find($id);
@@ -97,7 +121,7 @@ class ArtikelController extends Controller
         // $artikel->author = $request->input('author');
         // $artikel->konten = $request->input('konten');
         // $artikel->save();
-        
+
         return redirect('/artikel');
     }
 

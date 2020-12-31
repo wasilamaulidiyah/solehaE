@@ -18,8 +18,9 @@ class Artikelanjing extends Migration
 			function (Blueprint $table) {
 				$table->bigIncrements('id');
 				$table->unsignedBigInteger('user_id');
-				$table->string('judul');
+                $table->string('judul');
                 $table->string('author');
+                $table->string('gambar')->nullable();
                 $table->longtext('konten');
 				$table->timestamps();
 

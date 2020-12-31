@@ -78,7 +78,7 @@
     <td>
     <!-- Button trigger modal -->
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#{{$kucingre->id}}">
-      Tambah Feedback
+      Feedback
     </button>
 
 <!-- Modal -->
@@ -198,7 +198,7 @@
                         </div>    
                         <div class="form-check">
                           <label class="form-check-label">
-                            <input style="width:10px; height:10px" type="radio" value="false" name="soal7" class="form-check-input" {!! ($kucingre->soal6=='false') ? 'checked' : '' !!}/>
+                            <input style="width:10px; height:10px" type="radio" value="false" name="soal7" class="form-check-input" {!! ($kucingre->soal7=='false') ? 'checked' : '' !!}/>
                             <a>No</a>
                         </div>       
                     </div>

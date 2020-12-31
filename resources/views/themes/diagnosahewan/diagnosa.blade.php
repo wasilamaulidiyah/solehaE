@@ -48,84 +48,93 @@
                           <label class="form-check-label">
                             <input required style="width:10px; height:10px" type="radio" value="true" name="soal1" class="form-check-input"/>
                             <a>Yes</a>
-                        </div>    
+                        </div>
                         <div class="form-check">
                           <label class="form-check-label">
                             <input style="width:10px; height:10px" type="radio" value="false" name="soal1" class="form-check-input"/>
                             <a>No</a>
-                        </div> 
+                        </div>
                       </div>
-                    
+
                       <div class="form-group">
                         <label>Apakah pada kulit hewan terdapat bercak/luka?</label>
                         <div class="form-check">
                           <label class="form-check-label">
                             <input required style="width:10px; height:10px" type="radio" value="true" name="soal2" class="form-check-input"/>
                             <a>Yes</a>
-                        </div>    
+                        </div>
                         <div class="form-check">
                           <label class="form-check-label">
                             <input style="width:10px; height:10px" type="radio" value="false" name="soal2" class="form-check-input"/>
                             <a>No</a>
-                        </div>  
+                        </div>
                       </div>
-      
+
                       <div class="form-group">
                           <label>Apakah pada kulit hewan peliharaan terdapat bercak - bercak merah yang timbul (Seperti bruntusan) ?</label>
                           <div class="form-check">
                             <label class="form-check-label">
                               <input required style="width:10px; height:10px" type="radio" value="true" name="soal3" class="form-check-input"/>
                               <a>Yes</a>
-                          </div>    
+                          </div>
                           <div class="form-check">
                             <label class="form-check-label">
                               <input style="width:10px; height:10px" type="radio" value="false" name="soal3" class="form-check-input"/>
                               <a>No</a>
-                          </div> 
+                          </div>
                       </div>
-      
-                      <div class="form-group"> 
+
+                      <div class="form-group">
                         <label>Apakah kulit hewan peliharaan timbul bau tidak sedap ?</label>
                           <div class="form-check">
                             <label class="form-check-label">
                               <input required style="width:10px; height:10px" type="radio" value="true" name="soal4" class="form-check-input"/>
                               <a>Yes</a>
-                          </div>    
+                          </div>
                           <div class="form-check">
                             <label class="form-check-label">
                               <input style="width:10px; height:10px" type="radio" value="false" name="soal4" class="form-check-input"/>
                               <a>No</a>
-                          </div> 
+                          </div>
                       </div>
-      
+
                       <div class="form-group">
                           <label>Apakah pada tubuh hewan peliharaan terdapat bengkak di bagian kulit tertentu?</label>
                           <div class="form-check">
                             <label class="form-check-label">
                               <input required style="width:10px; height:10px" type="radio" value="true" name="soal5" class="form-check-input"/>
                               <a>Yes</a>
-                          </div>    
+                          </div>
                           <div class="form-check">
                             <label class="form-check-label">
                               <input style="width:10px; height:10px" type="radio" value="false" name="soal5" class="form-check-input"/>
                               <a>No</a>
                           </div>
                       </div>
-      
+
                       <div class="form-group">
                           <label>Apakah pada tubuh hewan peliharaan timbul nanah di bagian tertentu ?</label>
                             <div class="form-check">
                             <label class="form-check-label">
                               <input required style="width:10px; height:10px" type="radio" value="true" name="soal6" class="form-check-input"/>
                               <a>Yes</a>
-                          </div>    
+                          </div>
                           <div class="form-check">
                             <label class="form-check-label">
                               <input style="width:10px; height:10px" type="radio" value="false" name="soal6" class="form-check-input"/>
                               <a>No</a>
-                          </div>   
+                          </div>
                       </div>
-      
+                      <div class="form-group">
+                          <label class="small mb-1" for="gambar">Gambar</label>
+                          <input required class="form-control" id="gambar" type="file" name="gambar" accept="image/*" value="{{old('gambar')}}"/>
+                      </div>
+                          @error('gambar')
+                          <span>
+                              {{ ucwords($message) }}
+                          </span>
+                          @enderror
+
                     <div class = "card-footer text-right">
                       <div class="form-group row mb-0">
                         <div class="col-md-12">
@@ -140,12 +149,12 @@
                 </form>
               </div>
             </div>
-          </div> 
+          </div>
         </div>
         <br/>
         <br/>
         <a href="/diagnosakulit" class="btn btn-info">Hasil dan Feedback</a>
-      </div>     
+      </div>
     <div class="card-footer">
       <small class="text-muted">Diagnosa Pet Care</small>
     </div>
@@ -189,84 +198,94 @@
                                   <label class="form-check-label">
                                   <input required style="width:10px; height:10px" type="radio" value="true" name="soal1" class="form-check-input"/>
                                   <a>Yes</a>
-                              </div>    
+                              </div>
                               <div class="form-check">
                                   <label class="form-check-label">
                                   <input style="width:10px; height:10px" type="radio" value="false" name="soal1" class="form-check-input"/>
                                   <a>No</a>
-                              </div> 
+                              </div>
                           </div>
-      
+
                               <div class="form-group">
                                   <label>Apakah feses pada hewan peliharaan bertekstur cair ?</label>
                                   <div class="form-check">
                                     <label class="form-check-label">
                                       <input required style="width:10px; height:10px" type="radio" value="true" name="soal2" class="form-check-input"/>
                                       <a>Yes</a>
-                                  </div>    
+                                  </div>
                                   <div class="form-check">
                                     <label class="form-check-label">
                                       <input style="width:10px; height:10px" type="radio" value="false" name="soal2" class="form-check-input"/>
                                       <a>No</a>
-                                  </div>       
+                                  </div>
                               </div>
-      
+
                               <div class="form-group">
                                   <label>Apakah hewan peliharaan mengalami muntah - muntah selama jangka waktu tertentu ?</label>
                                   <div class="form-check">
                                     <label class="form-check-label">
                                       <input required style="width:10px; height:10px" type="radio" value="true" name="soal3" class="form-check-input"/>
                                       <a>Yes</a>
-                                  </div>    
+                                  </div>
                                   <div class="form-check">
                                     <label class="form-check-label">
                                       <input style="width:10px; height:10px" type="radio" value="false" name="soal3" class="form-check-input"/>
                                       <a>No</a>
-                                  </div>       
+                                  </div>
                               </div>
-      
+
                               <div class="form-group">
                                   <label>Apakah perut hewan peliharaan bergerak naik - turun secara terus menerus ?</label>
                                   <div class="form-check">
                                     <label class="form-check-label">
                                       <input required style="width:10px; height:10px" type="radio" value="true" name="soal4" class="form-check-input"/>
                                       <a>Yes</a>
-                                  </div>    
+                                  </div>
                                   <div class="form-check">
                                     <label class="form-check-label">
                                       <input style="width:10px; height:10px" type="radio" value="false" name="soal4" class="form-check-input"/>
                                       <a>No</a>
-                                  </div>       
+                                  </div>
                               </div>
-      
+
                               <div class="form-group">
                                   <label>Apakah hewan peliharaan menunjukkan sifat aneh dengan menjulurkan lidah selama waktu tertentu seperti sedang kehausan ?</label>
                                   <div class="form-check">
                                     <label class="form-check-label">
                                       <input required style="width:10px; height:10px" type="radio" value="true" name="soal5" class="form-check-input"/>
                                       <a>Yes</a>
-                                  </div>    
+                                  </div>
                                   <div class="form-check">
                                     <label class="form-check-label">
                                       <input style="width:10px; height:10px" type="radio" value="false" name="soal5" class="form-check-input"/>
                                       <a>No</a>
-                                  </div>       
+                                  </div>
                               </div>
-      
+
                               <div class="form-group">
                                   <label>Apakah hewan peliharaan terlihat lemas dan gemetar ?</label>
                                     <div class="form-check">
                                     <label class="form-check-label">
                                       <input required style="width:10px; height:10px" type="radio" value="true" name="soal6" class="form-check-input"/>
                                       <a>Yes</a>
-                                    </div>    
+                                    </div>
                                     <div class="form-check">
                                       <label class="form-check-label">
                                         <input style="width:10px; height:10px" type="radio" value="false" name="soal6" class="form-check-input"/>
                                         <a>No</a>
-                                    </div>       
+                                    </div>
                               </div>
-      
+
+                              <div class="form-group">
+                                  <label class="small mb-1" for="gambar">Gambar</label>
+                                  <input required class="form-control" id="gambar" type="file" name="gambar" accept="image/*" value="{{old('gambar')}}"/>
+                              </div>
+                                  @error('gambar')
+                                  <span>
+                                      {{ ucwords($message) }}
+                                  </span>
+                                  @enderror
+
                           <div class = "card-footer text-right">
                             <div class="form-group row mb-0">
                               <div class="col-md-12">
@@ -281,7 +300,7 @@
                 </form>
               </div>
             </div>
-          </div> 
+          </div>
         </div>
 
         <br/>
@@ -335,84 +354,94 @@
                           <label class="form-check-label">
                             <input required style="width:10px; height:10px" type="radio" value="true" name="soal1" class="form-check-input"/>
                             <a>Yes</a>
-                        </div>    
+                        </div>
                         <div class="form-check">
                           <label class="form-check-label">
                             <input style="width:10px; height:10px" type="radio" value="false" name="soal1" class="form-check-input"/>
                             <a>No</a>
-                        </div> 
+                        </div>
                       </div>
-                    
+
                       <div class="form-group">
                         <label>Apakah hewan peliharaan mengalami bersin - bersin ?</label>
                         <div class="form-check">
                           <label class="form-check-label">
                             <input required style="width:10px; height:10px" type="radio" value="true" name="soal2" class="form-check-input"/>
                             <a>Yes</a>
-                        </div>    
+                        </div>
                         <div class="form-check">
                           <label class="form-check-label">
                             <input style="width:10px; height:10px" type="radio" value="false" name="soal2" class="form-check-input"/>
                             <a>No</a>
-                        </div>  
+                        </div>
                       </div>
-      
+
                       <div class="form-group">
                           <label>Apakah hewan peliharaan mengalami demam ?</label>
                           <div class="form-check">
                             <label class="form-check-label">
                               <input required style="width:10px; height:10px" type="radio" value="true" name="soal3" class="form-check-input"/>
                               <a>Yes</a>
-                          </div>    
+                          </div>
                           <div class="form-check">
                             <label class="form-check-label">
                               <input style="width:10px; height:10px" type="radio" value="false" name="soal3" class="form-check-input"/>
                               <a>No</a>
-                          </div> 
+                          </div>
                       </div>
-      
-                      <div class="form-group"> 
+
+                      <div class="form-group">
                         <label>Apakah mata dari hewan peliharaan terlihat berair dan terdapat kotoran ?</label>
                           <div class="form-check">
                             <label class="form-check-label">
                               <input required style="width:10px; height:10px" type="radio" value="true" name="soal4" class="form-check-input"/>
                               <a>Yes</a>
-                          </div>    
+                          </div>
                           <div class="form-check">
                             <label class="form-check-label">
                               <input style="width:10px; height:10px" type="radio" value="false" name="soal4" class="form-check-input"/>
                               <a>No</a>
-                          </div> 
+                          </div>
                       </div>
-      
+
                       <div class="form-group">
                           <label>Apakah pada hewan peliharaan tercium bau mulut dan teradapat sariawan ?</label>
                           <div class="form-check">
                             <label class="form-check-label">
                               <input required style="width:10px; height:10px" type="radio" value="true" name="soal5" class="form-check-input"/>
                               <a>Yes</a>
-                          </div>    
+                          </div>
                           <div class="form-check">
                             <label class="form-check-label">
                               <input style="width:10px; height:10px" type="radio" value="false" name="soal5" class="form-check-input"/>
                               <a>No</a>
                           </div>
                       </div>
-      
+
                       <div class="form-group">
                           <label>Apakah hewan peliharaan terlihat sulit bernafas (nafasnya tersengal - sengal ) ?</label>
                             <div class="form-check">
                             <label class="form-check-label">
                               <input required style="width:10px; height:10px" type="radio" value="true" name="soal6" class="form-check-input"/>
                               <a>Yes</a>
-                          </div>    
+                          </div>
                           <div class="form-check">
                             <label class="form-check-label">
                               <input style="width:10px; height:10px" type="radio" value="false" name="soal6" class="form-check-input"/>
                               <a>No</a>
-                          </div>   
+                          </div>
                       </div>
-      
+
+                      <div class="form-group">
+                          <label class="small mb-1" for="gambar">Gambar</label>
+                          <input required class="form-control" id="gambar" type="file" name="gambar" accept="image/*" value="{{old('gambar')}}"/>
+                      </div>
+                          @error('gambar')
+                          <span>
+                              {{ ucwords($message) }}
+                          </span>
+                          @enderror
+
                     <div class = "card-footer text-right">
                       <div class="form-group row mb-0">
                         <div class="col-md-12">
@@ -427,14 +456,14 @@
                 </form>
               </div>
             </div>
-          </div> 
+          </div>
         </div>
 
         <br/>
         <br/>
-        <a href="/diagnosapernapasan" class="btn btn-info">Hasil dan Feedback</a>
+        <a href="/diagnosapernafasan" class="btn btn-info">Hasil dan Feedback</a>
       </div>
-    
+
     <div class="card-footer">
       <small class="text-muted">Diagnosa Pet Care</small>
     </div>
@@ -444,7 +473,11 @@
   </div>
 
 @else
- 
+<br/>
+<div class='container'>
+  <div class='text-center'>
+    <h3>Mohon Maaf Anda Harus Memiliki Akun Premium Terlebih Dahulu !</h3>
+    <br>
 <!-- Button trigger modal -->
 <button type="button text-center" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
   Akun Premium
@@ -461,7 +494,7 @@
         </button>
       </div>
       <div>
-      
+
       </div>
       <div class="modal-body">
       <form method="POST" action="{{url('akunpremium')}}">
@@ -474,9 +507,11 @@
         <button type="submit" class="btn btn-primary">Submit</button>
         </form>
       </div>
-      
+
     </div>
   </div>
+</div>
+</div>
 </div>
 @endif
 </div>

@@ -2,8 +2,9 @@
 
 @section('content')
 @if (Auth::user()!=null && Auth::user()->is_premium == 1)
+<br>
 <div class="section-title-3 mb-15">
-	<h3>Hasil Diagnosa Kulit</h3>
+	<h2>Hasil Diagnosa Kulit</h2>
 </div>
 <table class="table table-striped">
     <tr>
@@ -35,19 +36,19 @@
     @else
     <td>No</td>
     @endif
-    
+
     @if($kulit->soal3=='true')
     <td>Yes</td>
     @else
     <td>No</td>
     @endif
-    
+
     @if($kulit->soal4=='true')
     <td>Yes</td>
     @else
     <td>No</td>
     @endif
-    
+
     @if($kulit->soal5=='true')
     <td>Yes</td>
     @else
@@ -59,6 +60,10 @@
     @else
     <td>No</td>
     @endif
+
+		@if ($kulit->gambar==)
+
+		@endif
 
     @if($kulit->feedback == null)
     <td>Saat ini tidak ada feedback.</td>
@@ -103,26 +108,26 @@
                     <label class="form-check-label">
                       <input style="width:10px; height:10px" type="radio" value="true" name="soal1" class="form-check-input" {!! ($kulit->soal1=='true') ? 'checked' : '' !!}/>
                       <a>Yes</a>
-                  </div>    
+                  </div>
                   <div class="form-check">
                     <label class="form-check-label">
                       <input style="width:10px; height:10px" type="radio" value="false" name="soal1" class="form-check-input" {!! ($kulit->soal1=='false') ? 'checked' : '' !!}/>
                       <a>No</a>
-                  </div> 
+                  </div>
                 </div>
-              
+
                 <div class="form-group">
                   <label>Apakah pada kulit hewan terdapat bercak/luka?</label>
                   <div class="form-check">
                     <label class="form-check-label">
                       <input style="width:10px; height:10px" type="radio" value="true" name="soal2" class="form-check-input" {!! ($kulit->soal2=='true') ? 'checked' : '' !!}/>
                       <a>Yes</a>
-                  </div>    
+                  </div>
                   <div class="form-check">
                     <label class="form-check-label">
                       <input style="width:10px; height:10px" type="radio" value="false" name="soal2" class="form-check-input" {!! ($kulit->soal2=='false') ? 'checked' : '' !!}/>
                       <a>No</a>
-                  </div>  
+                  </div>
                 </div>
 
                 <div class="form-group">
@@ -131,26 +136,26 @@
                       <label class="form-check-label">
                         <input style="width:10px; height:10px" type="radio" value="true" name="soal3" class="form-check-input" {!! ($kulit->soal3=='true') ? 'checked' : '' !!}/>
                         <a>Yes</a>
-                    </div>    
+                    </div>
                     <div class="form-check">
                       <label class="form-check-label">
                         <input style="width:10px; height:10px" type="radio" value="false" name="soal3" class="form-check-input" {!! ($kulit->soal3=='false') ? 'checked' : '' !!}/>
                         <a>No</a>
-                    </div> 
+                    </div>
                 </div>
 
-                <div class="form-group"> 
+                <div class="form-group">
                   <label>Apakah kulit hewan peliharaan timbul bau tidak sedap ?</label>
                     <div class="form-check">
                       <label class="form-check-label">
                         <input style="width:10px; height:10px" type="radio" value="true" name="soal4" class="form-check-input" {!! ($kulit->soal4=='true') ? 'checked' : '' !!}/>
                         <a>Yes</a>
-                    </div>    
+                    </div>
                     <div class="form-check">
                       <label class="form-check-label">
                         <input style="width:10px; height:10px" type="radio" value="false" name="soal4" class="form-check-input" {!! ($kulit->soal4=='false') ? 'checked' : '' !!}/>
                         <a>No</a>
-                    </div> 
+                    </div>
                 </div>
 
                 <div class="form-group">
@@ -159,7 +164,7 @@
                       <label class="form-check-label">
                         <input style="width:10px; height:10px" type="radio" value="true" name="soal5" class="form-check-input" {!! ($kulit->soal5=='true') ? 'checked' : '' !!}/>
                         <a>Yes</a>
-                    </div>    
+                    </div>
                     <div class="form-check">
                       <label class="form-check-label">
                         <input style="width:10px; height:10px" type="radio" value="false" name="soal5" class="form-check-input" {!! ($kulit->soal5=='false') ? 'checked' : '' !!}/>
@@ -173,13 +178,14 @@
                       <label class="form-check-label">
                         <input style="width:10px; height:10px" type="radio" value="true" name="soal6" class="form-check-input" {!! ($kulit->soal6=='true') ? 'checked' : '' !!}/>
                         <a>Yes</a>
-                    </div>    
+                    </div>
                     <div class="form-check">
                       <label class="form-check-label">
                         <input style="width:10px; height:10px" type="radio" value="false" name="soal6" class="form-check-input" {!! ($kulit->soal6=='false') ? 'checked' : '' !!}/>
                         <a>No</a>
-                    </div>   
+                    </div>
                 </div>
+
                 <div class="form-group m-3">
                   <label for="#feedback">Feedback</label>
                   <textarea class="form-control" name="feedback" id="feedback" cols="30" rows="10" >{{$kulit->feedback}}</textarea>
